@@ -12,7 +12,7 @@ Optional environment variables:
 
   CITATION_SOURCE     Defaults to google_scholar. Use openalex to fall back to
                       the previous OpenAlex updater.
-  GOOGLE_SCHOLAR_ID   Google Scholar profile ID. Defaults to GvXOVv0AAAAJ.
+  GOOGLE_SCHOLAR_ID   Google Scholar profile ID. Defaults to ndkbhGcAAAAJ.
   SCHOLARLY_USE_FREE_PROXIES
                       Defaults to true. Uses scholarly's free proxy mode, which
                       often avoids direct Google Scholar blocking.
@@ -41,7 +41,7 @@ import time
 
 
 CITATION_SOURCE = os.getenv("CITATION_SOURCE", "google_scholar").strip().lower()
-GOOGLE_SCHOLAR_ID = os.getenv("GOOGLE_SCHOLAR_ID", "GvXOVv0AAAAJ").strip()
+GOOGLE_SCHOLAR_ID = os.getenv("GOOGLE_SCHOLAR_ID", "ndkbhGcAAAAJ").strip()
 SCHOLARLY_USE_FREE_PROXIES = os.getenv("SCHOLARLY_USE_FREE_PROXIES", "true").strip().lower() not in {"0", "false", "no"}
 SCHOLARLY_PUBLICATION_LIMIT = int(os.getenv("SCHOLARLY_PUBLICATION_LIMIT", "300"))
 OPENALEX_API_KEY = os.getenv("OPENALEX_API_KEY")

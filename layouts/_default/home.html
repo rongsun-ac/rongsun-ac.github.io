@@ -8,6 +8,9 @@
     {{ $lang = "en" }}
   {{ end }}
   {{ $home := index .Site.Data $lang "home" }}
+  {{ $disabledSections := .Site.Params.visibility.disabledSections | default slice }}
+  {{ $showNews := not (in $disabledSections "news") }}
+  {{ $showResearch := not (in $disabledSections "research") }}
   {{ $pubHref := "/publications/" | relLangURL }}
   {{ $researchHref := "/research/" | relLangURL }}
   {{ $newsHref := "/news/" | relLangURL }}
@@ -26,10 +29,12 @@
   {{ end }}
 
   {{ $newsItems := slice }}
-  {{ range $id, $item := .Site.Data.news }}
-    {{ if and (ne $item.display false) $item.date }}
-      {{ $sortDate := replace $item.date "-" "" }}
-      {{ $newsItems = $newsItems | append (dict "id" $id "sortKey" (int $sortDate) "item" $item) }}
+  {{ if $showNews }}
+    {{ range $id, $item := .Site.Data.news }}
+      {{ if and (ne $item.display false) $item.date }}
+        {{ $sortDate := replace $item.date "-" "" }}
+        {{ $newsItems = $newsItems | append (dict "id" $id "sortKey" (int $sortDate) "item" $item) }}
+      {{ end }}
     {{ end }}
   {{ end }}
 
@@ -44,7 +49,9 @@
       <p class="hero-description">{{ $home.hero.description | markdownify }}</p>
       <div class="personal-actions">
         <a class="access-button" href="{{ $pubHref }}">{{ $home.hero.primaryButton }}</a>
-        <a class="access-button" href="{{ $researchHref }}">{{ $home.hero.secondaryButton }}</a>
+        {{ if and $showResearch $home.hero.secondaryButton }}
+          <a class="access-button" href="{{ $researchHref }}">{{ $home.hero.secondaryButton }}</a>
+        {{ end }}
       </div>
     </div>
     <aside class="profile-card">
@@ -129,7 +136,7 @@
     </section>
   {{ end }}
 
-  {{ if $newsItems }}
+  {{ if and $showNews $newsItems }}
     <section class="personal-section">
       <p class="section-label">{{ $home.latest.newsLabel }}</p>
       <div class="latest-news-list">

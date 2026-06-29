@@ -8,7 +8,7 @@
       <a class="publication-link-button" href="{{ $link }}" title="Open paper link" aria-label="Open link for {{ .title }}">Link</a>
     </div>
   </div>
-  {{ $authors := .authors | replaceRE "(Cheng Tang|唐成)" "<span class=\"publication-author-self\">$1</span>" }}
+  {{ $authors := .authors | replaceRE "(Rong Sun|RONG SUN)" "<span class=\"publication-author-self\">$1</span>" }}
   {{ $venue := .journal | default .conference | default .preprint }}
   {{ $date := "" }}
   {{ with .year }}{{ $date = printf "%v" . }}{{ end }}

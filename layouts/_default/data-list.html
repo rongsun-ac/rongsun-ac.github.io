@@ -275,7 +275,7 @@
                                 {{ $monthText = replaceRE "^0+" "" $monthText }}
                                 {{ if $monthText }}{{ $paperDate = printf "%v.%02d" $matchedPaper.year (int $monthText) }}{{ end }}
                               {{ end }}
-                              {{ $paperAuthors := $matchedPaper.authors | replaceRE "(Cheng Tang|唐 成|唐成)" "<span class=\"publication-author-self\">$1</span>" }}
+                              {{ $paperAuthors := $matchedPaper.authors | replaceRE "(Rong Sun|RONG SUN)" "<span class=\"publication-author-self\">$1</span>" }}
                               <div class="research-topic-publication">
                                 <p class="publication-authors">{{ $paperAuthors | safeHTML }}</p>
                                 <p class="meta">

@@ -1,25 +1,25 @@
-baseURL = "https://chengtang-ai.github.io/"
-title = "Cheng Tang"
+baseURL = "https://rongsun-ac.github.io/"
+title = "Rong Sun"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
 disableLanguages = []
 
 [params]
-  browserTitle = "Cheng Tang"
-  labShortName = "Cheng Tang"
-  labName = "Associate Professor, Nagoya Institute of Technology"
-  logo = "images/ct_logo.jpg"
-  favicon = "favicon-ct-32x32.png"
-  faviconIco = "favicon-ct-32x32.png"
-  appleTouchIcon = "apple-touch-icon-ct.png"
-  description = "Academic website of Cheng Tang"
+  browserTitle = "Rong Sun"
+  labShortName = "Rong Sun"
+  labName = "Academic Profile"
+  logo = "images/members/aiclab_member_default.png"
+  favicon = "favicon-rongsun-32x32.png"
+  faviconIco = "favicon-rongsun-32x32.png"
+  appleTouchIcon = "apple-touch-icon-rongsun.png"
+  description = "Academic website of Rong Sun"
   showCitations = true
   showVisitCounter = true
 
 [params.visibility]
   disabledLanguages = []
-  disabledSections = ["members", "access", "links"]
+  disabledSections = ["research", "projects", "news", "members", "access", "links"]
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -29,102 +29,54 @@ disableLanguages = []
   languageCode = "en-us"
   contentDir = "content/en"
   weight = 1
-  title = "Cheng Tang"
+  title = "Rong Sun"
   [languages.en.params]
-    labName = "Associate Professor, Nagoya Institute of Technology"
-    labShortName = "Cheng Tang"
+    labName = "Academic Profile"
+    labShortName = "Rong Sun"
 
 [[languages.en.menu.main]]
   name = "Home"
   pageRef = "/"
   weight = 10
 [[languages.en.menu.main]]
-  name = "AIC Lab"
-  url = "https://t-aiclab.github.io/"
-  weight = 5
-[[languages.en.menu.main]]
-  name = "Research"
-  pageRef = "/research"
-  weight = 20
-[[languages.en.menu.main]]
   name = "Publications"
   pageRef = "/publications"
-  weight = 30
-[[languages.en.menu.main]]
-  name = "Projects"
-  pageRef = "/projects"
-  weight = 40
-[[languages.en.menu.main]]
-  name = "News"
-  pageRef = "/news"
-  weight = 50
+  weight = 20
 
 [languages.ja]
   languageName = "日本語"
   languageCode = "ja-jp"
   contentDir = "content/ja"
   weight = 2
-  title = "唐 成"
+  title = "Rong Sun"
   [languages.ja.params]
-    labName = "名古屋工業大学 准教授"
-    labShortName = "唐 成"
+    labName = "Academic Profile"
+    labShortName = "Rong Sun"
 
 [[languages.ja.menu.main]]
   name = "ホーム"
   pageRef = "/"
   weight = 10
 [[languages.ja.menu.main]]
-  name = "AIC Lab"
-  url = "https://t-aiclab.github.io/"
-  weight = 5
-[[languages.ja.menu.main]]
-  name = "研究紹介"
-  pageRef = "/research"
-  weight = 20
-[[languages.ja.menu.main]]
   name = "文献リスト"
   pageRef = "/publications"
-  weight = 30
-[[languages.ja.menu.main]]
-  name = "プロジェクト"
-  pageRef = "/projects"
-  weight = 40
-[[languages.ja.menu.main]]
-  name = "ニュース"
-  pageRef = "/news"
-  weight = 50
+  weight = 20
 
 [languages.zh]
   languageName = "中文"
   languageCode = "zh-cn"
   contentDir = "content/zh"
   weight = 3
-  title = "唐 成"
+  title = "Rong Sun"
   [languages.zh.params]
-    labName = "名古屋工业大学 副教授"
-    labShortName = "唐 成"
+    labName = "Academic Profile"
+    labShortName = "Rong Sun"
 
 [[languages.zh.menu.main]]
   name = "首页"
   pageRef = "/"
   weight = 10
 [[languages.zh.menu.main]]
-  name = "AIC Lab"
-  url = "https://t-aiclab.github.io/"
-  weight = 5
-[[languages.zh.menu.main]]
-  name = "研究介绍"
-  pageRef = "/research"
-  weight = 20
-[[languages.zh.menu.main]]
   name = "研究业绩"
   pageRef = "/publications"
-  weight = 30
-[[languages.zh.menu.main]]
-  name = "科研项目"
-  pageRef = "/projects"
-  weight = 40
-[[languages.zh.menu.main]]
-  name = "动态"
-  pageRef = "/news"
-  weight = 50
+  weight = 20
