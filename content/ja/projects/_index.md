@@ -1,6 +1,5 @@
 ---
-title: "プロジェクト"
+title: "研究プロジェクト"
 sectionKey: "projects"
 layout: "data-list"
 ---
-

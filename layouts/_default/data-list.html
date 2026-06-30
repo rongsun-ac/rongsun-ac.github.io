@@ -15,6 +15,8 @@
     {{ $data = .Site.Data.news }}
   {{ else if eq $key "research" }}
     {{ $data = .Site.Data.research }}
+  {{ else if eq $key "supervision" }}
+    {{ $data = .Site.Data.supervision }}
   {{ end }}
   {{ $pageTitle := $data.title | default .Title }}
   {{ if eq $key "members" }}
@@ -22,6 +24,8 @@
   {{ else if eq $key "news" }}
     {{ $pageTitle = .Title }}
   {{ else if eq $key "research" }}
+    {{ $pageTitle = .Title }}
+  {{ else if eq $key "supervision" }}
     {{ $pageTitle = .Title }}
   {{ end }}
 
@@ -525,6 +529,44 @@
               </div>
             </details>
           {{ end }}
+        {{ end }}
+      </div>
+
+    {{ else if eq $key "supervision" }}
+      {{ $titleLabel := "Research Topic" }}
+      {{ $studentLabel := "Student" }}
+      {{ $outcomeLabel := "Outcome" }}
+      {{ if eq $lang "ja" }}
+        {{ $titleLabel = "研究テーマ" }}
+        {{ $studentLabel = "対象学生" }}
+        {{ $outcomeLabel = "成果" }}
+      {{ else if eq $lang "zh" }}
+        {{ $titleLabel = "研究主题" }}
+        {{ $studentLabel = "指导对象" }}
+        {{ $outcomeLabel = "成果" }}
+      {{ end }}
+      {{ $items := slice }}
+      {{ range $id, $item := $data }}
+        {{ if ne $item.display false }}
+          {{ $sortYear := int ($item.start_year | default 0) }}
+          {{ $items = $items | append (merge $item (dict "id" $id "sortYear" $sortYear)) }}
+        {{ end }}
+      {{ end }}
+      <div class="stack">
+        {{ range sort $items "sortYear" "desc" }}
+          {{ $itemTitle := index .title $lang | default (index .title "en") }}
+          {{ $role := index .role $lang | default (index .role "en") }}
+          {{ $institution := index .institution $lang | default (index .institution "en") }}
+          {{ $student := index .student $lang | default (index .student "en") }}
+          {{ $topic := index .research_topic $lang | default (index .research_topic "en") }}
+          {{ $outcome := index .outcome $lang | default (index .outcome "en") }}
+          <article class="entry">
+            <p class="meta">{{ .period }}{{ with $role }} &middot; {{ . }}{{ end }}{{ with $institution }} &middot; {{ . }}{{ end }}</p>
+            <h2>{{ $itemTitle }}</h2>
+            {{ with $student }}<p><strong>{{ $studentLabel }}:</strong> {{ . }}</p>{{ end }}
+            {{ with $topic }}<p><strong>{{ $titleLabel }}:</strong> {{ . }}</p>{{ end }}
+            {{ with $outcome }}<p><strong>{{ $outcomeLabel }}:</strong> {{ . }}</p>{{ end }}
+          </article>
         {{ end }}
       </div>
 

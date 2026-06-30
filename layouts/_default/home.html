@@ -22,7 +22,12 @@
   {{ range $id, $paper := .Site.Data.publications }}
     {{ if and (ne $paper.display false) $paper.title }}
       {{ $paperYear := int ($paper.year | default 0) }}
-      {{ $paperMonth := int ($paper.month | default 0) }}
+      {{ $paperMonth := 0 }}
+      {{ with $paper.month }}
+        {{ $monthText := printf "%v" . }}
+        {{ $monthText = replaceRE "^0+" "" $monthText }}
+        {{ if $monthText }}{{ $paperMonth = int $monthText }}{{ end }}
+      {{ end }}
       {{ $sortKey := add (mul $paperYear 100) $paperMonth }}
       {{ $papers = $papers | append (merge $paper (dict "id" $id "sortKey" $sortKey)) }}
     {{ end }}

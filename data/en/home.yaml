@@ -1,23 +1,27 @@
 profile:
   name: "Rong Sun"
-  title: "Academic Profile"
-  affiliation: "Affiliation information will be updated."
-  photo: "/images/members/aiclab_member_default.png"
-  email: []
+  title: "Research Resident"
+  affiliation: "Division of Cancer Cell Regulation, Aichi Cancer Center"
+  photo: "/images/rong_sun.jpg"
+  email:
+    - "sunrong.ac@gmail.com"
   links:
     - label: "Google Scholar"
       url: "https://scholar.google.com/citations?user=ndkbhGcAAAAJ"
 hero:
-  eyebrow: ""
+  eyebrow: "Cancer Biology, Drug Resistance, and Translational Research"
   title: "Rong Sun"
-  description: "This academic profile summarizes publication and citation information based on the public Google Scholar profile."
+  description: "Research Resident in the Division of Cancer Cell Regulation, Aichi Cancer Center, working on the cellular and molecular mechanisms of cancer, with a focus on aberrant signaling pathways, extracellular vesicles, and therapeutic translation."
   primaryButton: "View publications"
   secondaryButton: "View publications"
 biography:
-  label: "BIOGRAPHY"
-  title: "About"
+  label: "PROFILE"
+  title: "About Rong Sun"
   paragraphs:
-    - "Profile details will be updated after affiliation, research interests, and contact information are confirmed."
+    - "**Post**  \nResearch Resident"
+    - "**Profile**  \nDr. Rong Sun received her M.D. from Ningxia Medical University, China, in 2014, and her M.Sc. in Medical Science from the same institution in 2018. During her master's training, she spent one year as an exchange student at the Faculty of Medicine, Shimane University, Japan. She obtained her Ph.D. in Medical Science from Shimane University in 2022, focusing on anticancer drug resistance in thoracic malignancies. In the same year, she began working as a physician at Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine. Since April 2026, she has been engaged in cancer research in the Division of Cancer Cell Regulation at Aichi Cancer Center."
+    - "**Research fields**  \nMy research aims to achieve an integrated understanding of aberrant signaling pathways and intercellular communication in cancer. Focusing on Src signaling and extracellular vesicles (EVs), I seek to elucidate the molecular basis of drug resistance and tumor progression, and to translate these findings into the development of novel therapeutic strategies and drug discovery to overcome resistance."
+    - "**Message**  \nMy research focuses on elucidating cellular and molecular mechanisms underlying clinically relevant questions, while exploring their potential for translation into clinical practice. I aim to contribute to the advancement of cancer therapy through research that bridges basic and clinical sciences."
 latest:
   publicationsLabel: "RECENT PUBLICATIONS"
   publicationsButton: "View all publications"
@@ -25,5 +29,5 @@ latest:
   newsButton: "View all news"
 footer:
   title: "RONG SUN"
-  affiliation: "Academic Profile"
+  affiliation: "Division of Cancer Cell Regulation, Aichi Cancer Center"
   copyright: "© Rong Sun"

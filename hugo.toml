@@ -9,7 +9,7 @@ disableLanguages = []
   browserTitle = "Rong Sun"
   labShortName = "Rong Sun"
   labName = "Academic Profile"
-  logo = "images/members/aiclab_member_default.png"
+  logo = "images/rong_sun.jpg"
   favicon = "favicon-rongsun-32x32.png"
   faviconIco = "favicon-rongsun-32x32.png"
   appleTouchIcon = "apple-touch-icon-rongsun.png"
@@ -19,7 +19,7 @@ disableLanguages = []
 
 [params.visibility]
   disabledLanguages = []
-  disabledSections = ["research", "projects", "news", "members", "access", "links"]
+  disabledSections = ["research", "members", "access", "links"]
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -42,6 +42,18 @@ disableLanguages = []
   name = "Publications"
   pageRef = "/publications"
   weight = 20
+[[languages.en.menu.main]]
+  name = "Projects"
+  pageRef = "/projects"
+  weight = 30
+[[languages.en.menu.main]]
+  name = "Supervision"
+  pageRef = "/supervision"
+  weight = 40
+[[languages.en.menu.main]]
+  name = "News"
+  pageRef = "/news"
+  weight = 50
 
 [languages.ja]
   languageName = "日本語"
@@ -61,6 +73,18 @@ disableLanguages = []
   name = "文献リスト"
   pageRef = "/publications"
   weight = 20
+[[languages.ja.menu.main]]
+  name = "研究プロジェクト"
+  pageRef = "/projects"
+  weight = 30
+[[languages.ja.menu.main]]
+  name = "研究指導"
+  pageRef = "/supervision"
+  weight = 40
+[[languages.ja.menu.main]]
+  name = "ニュース"
+  pageRef = "/news"
+  weight = 50
 
 [languages.zh]
   languageName = "中文"
@@ -80,3 +104,15 @@ disableLanguages = []
   name = "研究业绩"
   pageRef = "/publications"
   weight = 20
+[[languages.zh.menu.main]]
+  name = "科研项目"
+  pageRef = "/projects"
+  weight = 30
+[[languages.zh.menu.main]]
+  name = "研究指导"
+  pageRef = "/supervision"
+  weight = 40
+[[languages.zh.menu.main]]
+  name = "动态"
+  pageRef = "/news"
+  weight = 50

@@ -1,9 +1,20 @@
+{{- $lang := .lang | default "en" -}}
+{{- $title := .title -}}
+{{- $funder := .funder -}}
+{{- $amount := .amount -}}
+{{- if eq $lang "ja" -}}
+  {{- with .title_ja -}}{{- $title = . -}}{{- end -}}
+  {{- with .funder_ja -}}{{- $funder = . -}}{{- end -}}
+  {{- with .amount_ja -}}{{- $amount = . -}}{{- end -}}
+{{- else if eq $lang "zh" -}}
+  {{- with .title_zh -}}{{- $title = . -}}{{- end -}}
+  {{- with .funder_zh -}}{{- $funder = . -}}{{- end -}}
+  {{- with .amount_zh -}}{{- $amount = . -}}{{- end -}}
+{{- end -}}
 <article class="project-entry">
   <p class="meta">{{ .period }}{{ with .role }} &middot; {{ . }}{{ end }}</p>
-  <h2>{{ .title }}</h2>
-  {{ with .title_ja }}<p class="project-subtitle">{{ . }}</p>{{ end }}
+  <h2>{{ with .code }}<span class="publication-number">[{{ . }}]</span> {{ end }}{{ $title }}</h2>
   <p>
-    {{ .funder }}{{ with .program }}, {{ . }}{{ end }}{{ with .grant_number }}, No.{{ . }}{{ end }}{{ with .institution }}, {{ . }}{{ end }}
+    {{ $funder }}{{ with .program }}, {{ . }}{{ end }}{{ with .grant_number }}, No.{{ . }}{{ end }}{{ with .institution }}, {{ . }}{{ end }}{{ with $amount }}, {{ . }}{{ end }}
   </p>
-  {{ with .funder_ja }}<p class="meta">{{ . }}</p>{{ end }}
 </article>

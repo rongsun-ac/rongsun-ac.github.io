@@ -7,7 +7,7 @@
   {{- $collaboratorLabel = "分担者" -}}
 {{- else if eq $lang "zh" -}}
   {{- $principalLabel = "项目负责人" -}}
-  {{- $collaboratorLabel = "共同研究人员" -}}
+  {{- $collaboratorLabel = "共同研究者" -}}
 {{- end -}}
 
 {{- $principalProjects := where $projects "role_type" "principal" -}}
@@ -18,7 +18,7 @@
     <h3>{{ $principalLabel }}</h3>
     <div class="publication-list">
       {{- range $principalProjects -}}
-        {{ partial "project-entry.html" . }}
+        {{ partial "project-entry.html" (merge . (dict "lang" $lang)) }}
       {{- end -}}
     </div>
   </section>
@@ -29,7 +29,7 @@
     <h3>{{ $collaboratorLabel }}</h3>
     <div class="publication-list">
       {{- range $collaboratorProjects -}}
-        {{ partial "project-entry.html" . }}
+        {{ partial "project-entry.html" (merge . (dict "lang" $lang)) }}
       {{- end -}}
     </div>
   </section>

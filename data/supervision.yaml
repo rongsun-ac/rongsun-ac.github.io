@@ -1,0 +1,90 @@
+# Add one top-level entry per supervision or mentoring experience.
+# display: true shows the item; display: false hides the item.
+# IDs use supervision_YYYY_NN. The page sorts by start_year descending.
+
+example_supervision:
+  display: false
+  title:
+    en: "Example supervision experience"
+    ja: "研究指導経験の例"
+    zh: "研究指导经验示例"
+  role:
+    en: "Mentor"
+    ja: "メンター"
+    zh: "导师"
+  institution:
+    en: "Example University"
+    ja: "大学名の例"
+    zh: "示例大学"
+  period: "2026"
+  start_year: 2026
+  student:
+    en: "One doctoral student"
+    ja: "博士課程大学院生1名"
+    zh: "1名博士研究生"
+  research_topic:
+    en: "Example research topic"
+    ja: "研究テーマの例"
+    zh: "示例研究主题"
+  outcome:
+    en: "Example outcome."
+    ja: "成果の例．"
+    zh: "示例成果。"
+
+supervision_2023_01:
+  display: true
+  title:
+    en: "Shimane University S-SPRING Project"
+    ja: "島根大学 高度人材育成プロジェクト（S-SPRING）"
+    zh: "岛根大学高度人才培养项目（S-SPRING）"
+  role:
+    en: "Mentor"
+    ja: "メンター"
+    zh: "导师"
+  institution:
+    en: "Shimane University"
+    ja: "島根大学"
+    zh: "岛根大学"
+  period: "2023"
+  start_year: 2023
+  student:
+    en: "One doctoral student"
+    ja: "博士課程大学院生1名"
+    zh: "1名博士研究生"
+  research_topic:
+    en: "Action mechanism analysis for a combination treatment of chemotherapy and epidermal growth factor receptor tyrosine kinase inhibitors in non-small cell lung cancer"
+    ja: "非小細胞肺がんにおける化学療法と上皮成長因子受容体チロシンキナーゼ阻害薬の併用療法に関する作用機序解析"
+    zh: "非小细胞肺癌中化疗与表皮生长因子受体酪氨酸激酶抑制剂联合治疗的作用机制分析"
+  outcome:
+    en: "Supported doctoral research as a mentor."
+    ja: "メンターとして博士課程大学院生の研究を指導・支援した．"
+    zh: "作为导师指导并支持博士研究生的研究。"
+
+supervision_2023_02:
+  display: true
+  title:
+    en: "National Natural Science Foundation of China (NSFC) Project"
+    ja: "中国国家自然科学基金（NSFC）プロジェクト"
+    zh: "国家自然科学基金（NSFC）项目"
+  role:
+    en: "Mentor"
+    ja: "メンター"
+    zh: "导师"
+  institution:
+    en: "National Natural Science Foundation of China (NSFC)"
+    ja: "中国国家自然科学基金委員会（NSFC）"
+    zh: "国家自然科学基金委员会（NSFC）"
+  period: "2023-2026"
+  start_year: 2023
+  student:
+    en: "One doctoral student"
+    ja: "博士課程大学院生1名"
+    zh: "1名博士研究生"
+  research_topic:
+    en: "Drug resistance and therapeutic mechanisms in malignant pleural mesothelioma"
+    ja: "悪性胸膜中皮腫における薬剤耐性と治療機序"
+    zh: "恶性胸膜间皮瘤中的耐药机制与治疗机制"
+  outcome:
+    en: "Contributed to doctoral supervision and publication of a research paper: Zhong C, Wang S, Zhang J, Zheng Q, Lei Y, Xu Y, Ren T, Rong Sun. Deoxypodophyllotoxin inhibited the growth of malignant pleural mesothelioma by inducing necroptosis and mitotic catastrophe. Phytomedicine. 2025;143:156786. doi: 10.1016/j.phymed.2025.156786."
+    ja: "メンターとして博士課程大学院生1名を指導し，論文発表に貢献した：Zhong C, Wang S, Zhang J, Zheng Q, Lei Y, Xu Y, Ren T, Rong Sun. Deoxypodophyllotoxin inhibited the growth of malignant pleural mesothelioma by inducing necroptosis and mitotic catastrophe. Phytomedicine. 2025;143:156786. doi: 10.1016/j.phymed.2025.156786."
+    zh: "作为导师指导1名博士研究生，并为论文发表作出贡献：Zhong C, Wang S, Zhang J, Zheng Q, Lei Y, Xu Y, Ren T, Rong Sun. Deoxypodophyllotoxin inhibited the growth of malignant pleural mesothelioma by inducing necroptosis and mitotic catastrophe. Phytomedicine. 2025;143:156786. doi: 10.1016/j.phymed.2025.156786."
