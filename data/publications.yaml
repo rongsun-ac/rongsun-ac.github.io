@@ -3,6 +3,26 @@
 # IDs use journal_YYYY_NN, conference_YYYY_NN, or preprint_NN.
 # Use type: preprint, journal, or conference. The website sorts and groups entries automatically.
 
+
+# AUTO-ADDED PUBLICATIONS FROM GOOGLE SCHOLAR
+# Please review these entries regularly, fill type/source/month/doi/link fields,
+# and rename IDs to journal_YYYY_NN, conference_YYYY_NN, or preprint_NN.
+
+new_publication_2023_01:
+  # TODO: Review this automatically added Google Scholar entry.
+  display: true
+  type: "preprint"
+  title: "Supplementary Figures S1-S6 and Supplementary Table S1 from Anticancer Activity of ZnO Nanoparticles against Human Small-Cell Lung Cancer in an Orthotopic Mouse Model"
+  authors: ""
+  journal: ""
+  conference: ""
+  preprint: "Google Scholar"
+  year: 2023
+  month: ""
+  doi: ""
+  link: ""
+  citations: 0
+
 example_preprint:
   display: false
   type: "preprint"
@@ -79,7 +99,7 @@ journal_2025_02:
   link: ""
   pmid: "40378591"
   notes: "Corresponding author"
-  citations: 0
+  citations: 2
 
 journal_2024_01:
   display: true
@@ -95,7 +115,7 @@ journal_2024_01:
   pages: "106527"
   doi: "https://doi.org/10.1016/j.neunet.2024.106527"
   link: ""
-  citations: 0
+  citations: 7
 
 journal_2024_02:
   display: true
@@ -130,7 +150,7 @@ journal_2023_01:
   doi: "https://doi.org/10.21873/anticanres.16749"
   link: ""
   pmid: "38030186"
-  citations: 0
+  citations: 3
 
 journal_2022_01:
   display: true
@@ -225,7 +245,7 @@ journal_2018_01:
   link: ""
   pmid: "30026949"
   pmcid: "PMC6050164"
-  citations: 0
+  citations: 1
 
 journal_2019_02:
   display: true
