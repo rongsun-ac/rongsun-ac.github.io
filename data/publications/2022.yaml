@@ -1,0 +1,43 @@
+# Publication entries for 2022.
+# Add one top-level entry per paper.
+# The site and citation updater read all YAML files in data/publications/ automatically.
+
+journal_2022_01:
+  display: true
+  type: "journal"
+  title: "The association between cyclooxygenase-2 -1195G/A (rs689466) gene polymorphism and the clinicopathology of lung cancer in the Japanese population: a case-controlled study"
+  authors: "Rong Sun, Tanino R, Tong X, Isomura M, Chen LJ, Hotta T, Okimoto T, Hamaguchi M, Hamaguchi S, Taooka Y, Isobe T, Tsubata Y"
+  journal: "Frontiers in Genetics"
+  conference: ""
+  preprint: ""
+  year: 2022
+  month: "04"
+  volume: "13"
+  pages: "796444"
+  doi: "https://doi.org/10.3389/fgene.2022.796444"
+  link: ""
+  pmid: "35450217"
+  pmcid: "PMC9016323"
+  notes: "First author"
+  citations: 3
+
+
+journal_2022_02:
+  display: true
+  type: "journal"
+  title: "Picropodophyllin inhibits the growth of pemetrexed-resistant malignant pleural mesothelioma via microtubule inhibition and IGF-1R-, caspase-independent pathways"
+  authors: "Rong Sun, Tanino R, Tong X, Haque EF, Amano Y, Isobe T, Tsubata Y"
+  journal: "Translational Lung Cancer Research"
+  conference: ""
+  preprint: ""
+  year: 2022
+  month: "04"
+  volume: "11"
+  number: "4"
+  pages: "543-559"
+  doi: "https://doi.org/10.21037/tlcr-21-765"
+  link: ""
+  pmid: "35529797"
+  pmcid: "PMC9073748"
+  notes: "First author"
+  citations: 7

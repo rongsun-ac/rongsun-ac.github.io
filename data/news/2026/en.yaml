@@ -1,0 +1,22 @@
+# News items for Japanese fiscal year 2026.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+example_news:
+  display: false
+  date: "2026-04-01"
+  student_year: ""
+  title: "Example news title"
+  person_name: "Rong Sun"
+  person_type: "Researcher"
+  position: "Research Resident"
+  text: "News body with **Markdown** and [links](https://example.com/)."
+
+news_2026_04_01_01:
+  display: true
+  date: "2026-04-01"
+  student_year: ""
+  title: "Division of Cancer Cell Regulation, Aichi Cancer Center, Research Resident"
+  person_name: "Rong Sun"
+  person_type: "Researcher"
+  position: "Research Resident"
+  text: "began cancer research in the **Division of Cancer Cell Regulation, [Aichi Cancer Center](https://cancer-c.pref.aichi.jp/)**."

@@ -1,0 +1,22 @@
+# News items for Japanese fiscal year 2022.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2022_04_01_01:
+  display: true
+  date: "2022-04-01"
+  student_year: ""
+  title: "上海交通大学医学院附属第六人民医院，内科医師"
+  person_name: "孫 栄"
+  person_type: "医師"
+  position: "内科医師"
+  text: "**上海交通大学医学院附属第六人民医院** において，内科医師として勤務しました．"
+
+news_2022_06_01_01:
+  display: true
+  date: "2022-06-01"
+  student_year: ""
+  title: "島根大学大学院，博士課程修了"
+  person_name: "孫 栄"
+  person_type: "学生"
+  position: "博士課程学生"
+  text: "**島根大学大学院医学部医科学科博士課程**を修了しました．"

@@ -1,0 +1,22 @@
+# News items for Japanese fiscal year 2009.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2009_09_01_01:
+  display: true
+  date: "2009-09-01"
+  student_year: ""
+  title: "宁夏医科大学临床医学学部，入学"
+  person_name: "孙 荣"
+  person_type: "学生"
+  position: "医学生"
+  text: "进入 **中国宁夏医科大学临床医学学部**。"
+
+news_2009_11_30_01:
+  display: true
+  date: "2009-11-30"
+  student_year: ""
+  title: "中国，医师资格证"
+  person_name: "孙 荣"
+  person_type: "医学生"
+  position: "医学生"
+  text: "取得 **中国医师资格证**。"

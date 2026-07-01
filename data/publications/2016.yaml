@@ -1,0 +1,18 @@
+# Publication entries for 2016.
+# Add one top-level entry per paper.
+# The site and citation updater read all YAML files in data/publications/ automatically.
+
+conference_2016_01:
+  display: true
+  type: "conference"
+  title: "New developments and research directions on the role of TPD52L1 in asthma and airway epithelium"
+  authors: "孙荣等"
+  journal: ""
+  conference: "2016中华医学会第十届全国哮喘学术会议"
+  preprint: ""
+  year: 2016
+  month: "11"
+  doi: ""
+  link: ""
+  presentation: "Poster presentation"
+  citations: 0

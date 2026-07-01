@@ -1,0 +1,40 @@
+# Publication entries for 2025.
+# Add one top-level entry per paper.
+# The site and citation updater read all YAML files in data/publications/ automatically.
+
+journal_2025_01:
+  display: true
+  type: "journal"
+  title: "Inhibition of small-cell lung cancer angiogenesis by irinotecan metronomic chemotherapy and irinotecan plus everolimus"
+  authors: "Amano Y, Tanino R, Rong Sun, Tsubata Y, Isobe T, Okimoto T"
+  journal: "Anticancer Research"
+  conference: ""
+  preprint: ""
+  year: 2025
+  month: "12"
+  volume: "45"
+  number: "12"
+  pages: "5287-5297"
+  doi: "https://doi.org/10.21873/anticanres.17868"
+  link: ""
+  pmid: "41318139"
+  citations: 1
+
+
+journal_2025_02:
+  display: true
+  type: "journal"
+  title: "Deoxypodophyllotoxin inhibited the growth of malignant pleural mesothelioma by inducing necroptosis and mitotic catastrophe"
+  authors: "Zhong C, Wang S, Zhang J, Zheng Q, Lei Y, Xu Y, Ren T, Rong Sun"
+  journal: "Phytomedicine"
+  conference: ""
+  preprint: ""
+  year: 2025
+  month: "07"
+  volume: "143"
+  pages: "156786"
+  doi: "https://doi.org/10.1016/j.phymed.2025.156786"
+  link: ""
+  pmid: "40378591"
+  notes: "Corresponding author"
+  citations: 2

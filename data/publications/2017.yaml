@@ -1,0 +1,52 @@
+# Publication entries for 2017.
+# Add one top-level entry per paper.
+# The site and citation updater read all YAML files in data/publications/ automatically.
+
+journal_2017_01:
+  display: true
+  type: "journal"
+  title: "胸部CT扫描测定肺动脉与主动脉直径比值与老年COPD患者血清炎症因子的相关性研究"
+  authors: "孙荣, 张银, 丁薇, 周晓莉, 许德凤, 赵云峰"
+  journal: "老年医学与保健"
+  conference: ""
+  preprint: ""
+  year: 2017
+  month: "04"
+  pages: "330-332"
+  doi: ""
+  cnki: "CNKI:SUN:LYBJ.0.2017-04-026"
+  link: ""
+  citations: 0
+
+
+journal_2017_02:
+  display: true
+  type: "journal"
+  title: "老年慢性阻塞性肺疾病相关肺动脉高压患者血浆胃促生长素的变化特征与临床应用价值研究"
+  authors: "张青, 孙荣, 丁薇, 刘明, 赵云峰, 夏世金"
+  journal: "老年医学与保健"
+  conference: ""
+  preprint: ""
+  year: 2017
+  month: "06"
+  pages: "557-560"
+  doi: ""
+  cnki: "CNKI:SUN:LYBJ.0.2017-06-033"
+  link: ""
+  citations: 0
+
+
+conference_2017_01:
+  display: true
+  type: "conference"
+  title: "胸部CT扫描测定肺动脉与主动脉直径比值与老年COPD患者血清炎症因子的相关性研究"
+  authors: "孙荣等"
+  journal: ""
+  conference: "中华医学会呼吸病学年会-2017 第十八次全国呼吸病学学术会议 CTS"
+  preprint: ""
+  year: 2017
+  month: "09"
+  doi: ""
+  link: ""
+  presentation: "Paper"
+  citations: 0

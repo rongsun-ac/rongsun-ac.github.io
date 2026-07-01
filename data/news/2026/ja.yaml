@@ -1,0 +1,22 @@
+# News items for Japanese fiscal year 2026.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+example_news:
+  display: false
+  date: "2026-04-01"
+  student_year: ""
+  title: "ニュースタイトルの例"
+  person_name: "孫 栄"
+  person_type: "研究者"
+  position: "リサーチレジデント"
+  text: "**Markdown** と [リンク](https://example.com/) を使用できます．"
+
+news_2026_04_01_01:
+  display: true
+  date: "2026-04-01"
+  student_year: ""
+  title: "愛知県がんセンター 腫瘍制御学分野，リサーチレジデント"
+  person_name: "孫 栄"
+  person_type: "研究者"
+  position: "リサーチレジデント"
+  text: "**[愛知県がんセンター](https://cancer-c.pref.aichi.jp/)** **腫瘍制御学分野**において，がん研究に従事しました．"

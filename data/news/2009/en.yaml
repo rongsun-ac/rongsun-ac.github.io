@@ -1,0 +1,22 @@
+# News items for Japanese fiscal year 2009.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2009_09_01_01:
+  display: true
+  date: "2009-09-01"
+  student_year: ""
+  title: "Ningxia Medical University, School of Clinical Medicine Enrollment"
+  person_name: "Rong Sun"
+  person_type: "Student"
+  position: "Medical Student"
+  text: "entered the **School of Clinical Medicine, Ningxia Medical University**."
+
+news_2009_11_30_01:
+  display: true
+  date: "2009-11-30"
+  student_year: ""
+  title: "China, Physician License"
+  person_name: "Rong Sun"
+  person_type: "Medical Student"
+  position: "Medical Student"
+  text: "obtained a **physician license in China**."

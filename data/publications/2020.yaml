@@ -1,0 +1,53 @@
+# Publication entries for 2020.
+# Add one top-level entry per paper.
+# The site and citation updater read all YAML files in data/publications/ automatically.
+
+journal_2020_01:
+  display: true
+  type: "journal"
+  title: "Anticancer activity of ZnO nanoparticles against human small-cell lung cancer in an orthotopic mouse model"
+  authors: "Tanino R, Amano Y, Tong X, Rong Sun, Tsubata Y, Harada M, Fujita Y, Isobe T"
+  journal: "Molecular Cancer Therapeutics"
+  conference: ""
+  preprint: ""
+  year: 2020
+  month: "02"
+  volume: "19"
+  number: "2"
+  pages: "502-512"
+  doi: "https://doi.org/10.1158/1535-7163.MCT-19-0018"
+  link: ""
+  pmid: "31784453"
+  citations: 127
+
+
+conference_2020_01:
+  display: true
+  type: "conference"
+  title: "酸化亜鉛ナノ粒子の小細胞肺癌細胞に対する抗腫瘍効果の検討"
+  authors: "谷野良輔, 天野芳宏, Tong X, Rong Sun, 津端由佳里, 原田守, 藤田恭久, 礒部威"
+  journal: ""
+  conference: "第60回日本呼吸器学会学術講演会"
+  preprint: ""
+  year: 2020
+  month: "09"
+  doi: ""
+  link: ""
+  presentation: "Poster presentation"
+  citations: 0
+
+
+conference_2020_02:
+  display: true
+  type: "conference"
+  title: "IGF-1R may be a potential therapeutic target for pemetrexed-resistant malignant pleural mesothelioma"
+  authors: "Rong Sun, Tanino R, Tong X, Tsubata Y, Isobe T"
+  journal: ""
+  conference: "第60回日本呼吸器学会学術講演会"
+  preprint: ""
+  year: 2020
+  month: "09"
+  doi: ""
+  link: ""
+  presentation: "Poster presentation"
+  citations: 0

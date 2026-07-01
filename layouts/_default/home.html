@@ -7,7 +7,7 @@
   {{ else }}
     {{ $lang = "en" }}
   {{ end }}
-  {{ $home := index .Site.Data $lang "home" }}
+  {{ $home := partial "merge-localized-data.html" (dict "base" (index .Site.Data.home "en") "local" (index .Site.Data.home $lang | default dict) "keys" (slice "profile" "hero" "biography" "overview" "message" "latest" "publicationProfile" "footer")) }}
   {{ $disabledSections := .Site.Params.visibility.disabledSections | default slice }}
   {{ $showNews := not (in $disabledSections "news") }}
   {{ $showResearch := not (in $disabledSections "research") }}
@@ -18,31 +18,17 @@
   {{ with .Site.GetPage "/research" }}{{ $researchHref = .RelPermalink }}{{ end }}
   {{ with .Site.GetPage "/news" }}{{ $newsHref = .RelPermalink }}{{ end }}
 
-  {{ $papers := slice }}
-  {{ range $id, $paper := .Site.Data.publications }}
-    {{ if and (ne $paper.display false) $paper.title }}
-      {{ $paperYear := int ($paper.year | default 0) }}
-      {{ $paperMonth := 0 }}
-      {{ with $paper.month }}
-        {{ $monthText := printf "%v" . }}
-        {{ $monthText = replaceRE "^0+" "" $monthText }}
-        {{ if $monthText }}{{ $paperMonth = int $monthText }}{{ end }}
-      {{ end }}
-      {{ $sortKey := add (mul $paperYear 100) $paperMonth }}
-      {{ $papers = $papers | append (merge $paper (dict "id" $id "sortKey" $sortKey)) }}
-    {{ end }}
-  {{ end }}
+  {{ $papers := partial "collect-publications.html" . }}
 
   {{ $newsItems := slice }}
   {{ if $showNews }}
-    {{ range $id, $item := .Site.Data.news }}
-      {{ if and (ne $item.display false) $item.date }}
-        {{ $sortDate := replace $item.date "-" "" }}
-        {{ $newsItems = $newsItems | append (dict "id" $id "sortKey" (int $sortDate) "item" $item) }}
+    {{ range partial "collect-news.html" (dict "site" .Site "lang" $lang) }}
+      {{ if and (ne .display false) .date }}
+        {{ $sortDate := replace .date "-" "" }}
+        {{ $newsItems = $newsItems | append (dict "id" .id "sortKey" (int $sortDate) "item" .) }}
       {{ end }}
     {{ end }}
   {{ end }}
-
   <section class="personal-hero">
     <div class="personal-hero-copy">
       {{ with $home.hero.eyebrow }}
@@ -71,7 +57,17 @@
       </div>
       <div class="profile-links">
         {{ range $home.profile.links }}
-          <a href="{{ .url }}">{{ .label }}</a>
+          {{ $link := . }}
+          {{ with $link.url }}
+            <a href="{{ . }}" target="_blank" rel="noopener" title="{{ $link.label }}" aria-label="{{ $link.label }}" class="{{ if $link.icon }}profile-icon-link{{ end }}">
+              {{ if $link.icon }}
+                <img src="{{ $link.icon | relURL }}" alt="" aria-hidden="true">
+                <span class="visually-hidden">{{ $link.label }}</span>
+              {{ else }}
+                {{ $link.label }}
+              {{ end }}
+            </a>
+          {{ end }}
         {{ end }}
       </div>
     </aside>
@@ -133,7 +129,7 @@
         {{ range first 5 (sort $papers "sortKey" "desc") }}
           <article class="compact-entry">
             <h3>{{ .title }}</h3>
-            <p class="meta">{{ .year }}{{ with .month }}.{{ printf "%02d" (int .) }}{{ end }} · {{ .journal | default .conference | default .preprint }}</p>
+            <p class="meta">{{ .year }}{{ with .month }}{{ $monthText := printf "%v" . }}{{ $monthText = replaceRE "^0+" "" $monthText }}{{ if $monthText }}.{{ printf "%02d" (int $monthText) }}{{ end }}{{ end }} &middot; {{ .journal | default .conference | default .preprint }}</p>
           </article>
         {{ end }}
       </div>
@@ -147,11 +143,11 @@
       <div class="latest-news-list">
         {{ range first 3 (sort $newsItems "sortKey" "desc") }}
           {{ $item := .item }}
-          {{ $newsTitle := index $item.title $lang | default (index $item.title "en") }}
-          {{ $newsText := index $item.text $lang | default (index $item.text "en") }}
-          {{ $personName := index $item.person_name $lang | default (index $item.person_name "en") }}
-          {{ $personType := index $item.person_type $lang | default (index $item.person_type "en") }}
-          {{ $position := index $item.position $lang | default (index $item.position "en") }}
+          {{ $newsTitle := $item.title }}
+          {{ $newsText := $item.text }}
+          {{ $personName := $item.person_name }}
+          {{ $personType := $item.person_type }}
+          {{ $position := $item.position }}
           {{ $localizedItem := merge $item (dict "title" $newsTitle "text" $newsText "person_name" $personName "person_type" $personType "position" $position) }}
           <article class="latest-news-card">
             <p class="meta">{{ $item.date }}</p>

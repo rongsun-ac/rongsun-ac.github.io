@@ -1,0 +1,22 @@
+# News items for Japanese fiscal year 2018.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2018_06_01_01:
+  display: true
+  date: "2018-06-01"
+  student_year: ""
+  title: "寧夏医科大学大学院，修士課程修了"
+  person_name: "孫 栄"
+  person_type: "学生"
+  position: "修士課程学生"
+  text: "**中国寧夏医科大学大学院内科学科修士課程**を修了しました．"
+
+news_2018_06_01_02:
+  display: true
+  date: "2018-06-01"
+  student_year: ""
+  title: "島根大学大学院，博士課程入学"
+  person_name: "孫 栄"
+  person_type: "学生"
+  position: "博士課程学生"
+  text: "**島根大学大学院医学部医科学科博士課程**に入学しました．"

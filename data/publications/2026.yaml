@@ -1,0 +1,47 @@
+# Publication entries for 2026.
+# Add one top-level entry per paper.
+# The site and citation updater read all YAML files in data/publications/ automatically.
+
+example_preprint:
+  display: false
+  type: "preprint"
+  title: "Example preprint title"
+  authors: "Author A, Author B"
+  journal: ""
+  conference: ""
+  preprint: "arXiv preprint"
+  year: 2026
+  month: "01"
+  doi: ""
+  link: ""
+  citations: 0
+
+
+example_journal_2026_01:
+  display: false
+  type: "journal"
+  title: "Example journal paper title"
+  authors: "Author A, Author B"
+  journal: "Example Journal"
+  conference: ""
+  preprint: ""
+  year: 2026
+  month: "01"
+  doi: ""
+  link: ""
+  citations: 0
+
+
+example_conference_2026_01:
+  display: false
+  type: "conference"
+  title: "Example conference paper title"
+  authors: "Author A, Author B"
+  journal: ""
+  conference: "Example Conference"
+  preprint: ""
+  year: 2026
+  month: "01"
+  doi: ""
+  link: ""
+  citations: 0

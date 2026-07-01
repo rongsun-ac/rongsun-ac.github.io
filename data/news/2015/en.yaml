@@ -1,0 +1,12 @@
+# News items for Japanese fiscal year 2015.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2015_09_01_01:
+  display: true
+  date: "2015-09-01"
+  student_year: ""
+  title: "Ningxia Medical University, Master's Program Enrollment"
+  person_name: "Rong Sun"
+  person_type: "Student"
+  position: "Master's Student"
+  text: "entered the **master's program** in **Internal Medicine, Graduate School of Ningxia Medical University**."

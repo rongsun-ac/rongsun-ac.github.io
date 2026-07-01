@@ -1,0 +1,101 @@
+# Publication entries for 2019.
+# Add one top-level entry per paper.
+# The site and citation updater read all YAML files in data/publications/ automatically.
+
+journal_2019_01:
+  display: true
+  type: "journal"
+  title: "Protein tyrosine kinase 2: a novel therapeutic target to overcome acquired EGFR-TKI resistance in non-small cell lung cancer"
+  authors: "Tong X, Tanino R, Rong Sun, Tsubata Y, Okimoto T, Takechi M, Isobe T"
+  journal: "Respiratory Research"
+  conference: ""
+  preprint: ""
+  year: 2019
+  month: "12"
+  volume: "20"
+  number: "1"
+  pages: "270"
+  doi: "https://doi.org/10.1186/s12931-019-1244-2"
+  link: ""
+  pmid: "31791326"
+  pmcid: "PMC6889213"
+  citations: 46
+
+
+journal_2019_02:
+  display: true
+  type: "journal"
+  title: "老年慢性阻塞性肺疾病患者血浆肥胖抑制素浓度与CAT评分及6分钟步行距离的相关性研究"
+  authors: "赵云峰, 孙荣, 鲁晓怡, 胡慧芳"
+  journal: "老年医学与保健"
+  conference: ""
+  preprint: ""
+  year: 2019
+  month: "01"
+  pages: "86-88+92"
+  doi: ""
+  cnki: "CNKI:SUN:LYBJ.0.2019-01-022"
+  link: ""
+  citations: 0
+
+
+conference_2019_01:
+  display: true
+  type: "conference"
+  title: "Zinc oxide nanoparticles promote oxidative stress and genotoxicity in small-cell lung cancer"
+  authors: "Tanino R, Amano Y, Tong X, Rong Sun, Tsubata Y, Harada M, Fujita Y, Isobe T"
+  journal: ""
+  conference: "13th International Symposium on Nanomedicine"
+  preprint: ""
+  year: 2019
+  month: "12"
+  doi: ""
+  link: ""
+  citations: 0
+
+
+conference_2019_02:
+  display: true
+  type: "conference"
+  title: "Therapeutic efficacy of zinc oxide nanoparticles against small cell lung cancer in an orthotopic xenograft model"
+  authors: "Tanino R, Amano Y, Tong X, Rong Sun, Umemoto J, Kobayashi M, Shiratsuki Y, Okuno T, Tanino A, Nakao M, Hotta T, Hamaguchi M, Okimoto T, Tsubata Y, Hamaguchi S, Kurimoto N, Takeyama H, Fujita Y, Isobe T"
+  journal: ""
+  conference: "ATS 2019"
+  preprint: ""
+  year: 2019
+  month: "05"
+  doi: "https://doi.org/10.1164/ajrccm-conference.2019.199.1_meetingabstracts.a3948"
+  link: ""
+  citations: 4
+
+
+conference_2019_03:
+  display: true
+  type: "conference"
+  title: "Establishment of a pemetrexed-resistant human malignant pleural mesothelioma cell line"
+  authors: "Rong Sun, Tanino R, Tong X, Tsubata Y, Isobe T"
+  journal: ""
+  conference: "第59回日本呼吸器学会学術講演会"
+  preprint: ""
+  year: 2019
+  month: "04"
+  doi: ""
+  link: ""
+  presentation: "English oral presentation"
+  citations: 0
+
+
+conference_2019_04:
+  display: true
+  type: "conference"
+  title: "Co-inhibition of EGFR and protein tyrosine kinase 2 (PTK2) to overcome acquired EGFR-TKI resistance in non-small cell lung cancer"
+  authors: "Tong X, Tanino R, Rong Sun, Okimoto T, Tsubata Y, Isobe T"
+  journal: ""
+  conference: "第59回日本呼吸器学会学術講演会"
+  preprint: ""
+  year: 2019
+  month: "04"
+  doi: ""
+  link: ""
+  presentation: "English oral presentation"
+  citations: 0

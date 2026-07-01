@@ -1,0 +1,22 @@
+# News items for Japanese fiscal year 2018.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2018_06_01_01:
+  display: true
+  date: "2018-06-01"
+  student_year: ""
+  title: "宁夏医科大学大学院，硕士课程结业"
+  person_name: "孙 荣"
+  person_type: "学生"
+  position: "硕士生"
+  text: "完成 **中国宁夏医科大学大学院内科学科硕士课程**。"
+
+news_2018_06_01_02:
+  display: true
+  date: "2018-06-01"
+  student_year: ""
+  title: "岛根大学大学院，博士课程入学"
+  person_name: "孙 荣"
+  person_type: "学生"
+  position: "博士生"
+  text: "进入 **岛根大学大学院医学部医科学科博士课程**。"

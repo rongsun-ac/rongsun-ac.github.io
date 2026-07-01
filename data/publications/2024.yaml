@@ -1,0 +1,37 @@
+# Publication entries for 2024.
+# Add one top-level entry per paper.
+# The site and citation updater read all YAML files in data/publications/ automatically.
+
+journal_2024_01:
+  display: true
+  type: "journal"
+  title: "A novel multivariate time series forecasting dendritic neuron model for COVID-19 pandemic transmission tendency"
+  authors: "Tang C, Todo Y, Kodera S, Rong Sun, Shimada A, Hirata A"
+  journal: "Neural Networks"
+  conference: ""
+  preprint: ""
+  year: 2024
+  month: "11"
+  volume: "179"
+  pages: "106527"
+  doi: "https://doi.org/10.1016/j.neunet.2024.106527"
+  link: ""
+  citations: 7
+
+
+journal_2024_02:
+  display: true
+  type: "journal"
+  title: "A hardware-based orientation detection system using dendritic computation"
+  authors: "Nomura M, Chen T, Tang C, Todo Y, Rong Sun, Li B, Tang Z"
+  journal: "Electronics"
+  conference: ""
+  preprint: ""
+  year: 2024
+  month: "04"
+  volume: "13"
+  number: "7"
+  pages: "1367"
+  doi: "https://doi.org/10.3390/electronics13071367"
+  link: ""
+  citations: 0

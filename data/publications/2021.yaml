@@ -1,0 +1,68 @@
+# Publication entries for 2021.
+# Add one top-level entry per paper.
+# The site and citation updater read all YAML files in data/publications/ automatically.
+
+conference_2021_01:
+  display: true
+  type: "conference"
+  title: "Establishment of acquired pemetrexed-resistant MPM cell lines and evaluation of an IGF-1R inhibitor picropodophyllin for MPM treatment"
+  authors: "Rong Sun, Tanino R, Tong X, Haque EF, Amano Y, Isobe T, Tsubata Y"
+  journal: ""
+  conference: "APSR 2021 Kyoto"
+  preprint: ""
+  year: 2021
+  month: "11"
+  volume: "26"
+  number: "S3"
+  doi: "https://doi.org/10.1111/resp.14150_114"
+  link: ""
+  citations: 0
+
+
+conference_2021_02:
+  display: true
+  type: "conference"
+  title: "Comparison of treatment duration in developing drug resistance to EGFR-TKI, pemetrexed, and combination treatment in NSCLC in vitro"
+  authors: "Haque EF, Tanino R, Rong Sun, Tsubata Y, Isobe T"
+  journal: ""
+  conference: "APSR 2021 Kyoto"
+  preprint: ""
+  year: 2021
+  month: "11"
+  volume: "26"
+  number: "S3"
+  doi: "https://doi.org/10.1111/resp.14149_87"
+  link: ""
+  citations: 0
+
+
+conference_2021_03:
+  display: true
+  type: "conference"
+  title: "An IGF-1R inhibitor picropodophyllin causes mitotic aberration by inhibition of microtubule dynamics in acquired pemetrexed-resistant malignant pleural mesothelioma"
+  authors: "Rong Sun, Tanino R, Haque EF, Tsubata Y, Isobe T"
+  journal: ""
+  conference: "第61回日本呼吸器学会学術講演会"
+  preprint: ""
+  year: 2021
+  month: "09"
+  doi: ""
+  link: ""
+  presentation: "Oral presentation"
+  citations: 0
+
+
+conference_2021_04:
+  display: true
+  type: "conference"
+  title: "ヒト悪性胸膜中皮腫細胞株を用いた3次元培養細胞のホルマリン固定切片の作製と評価"
+  authors: "谷野良輔, Rong Sun, Haque EF, 津端由佳里, 礒部威"
+  journal: ""
+  conference: "第2回日本石綿・中皮腫学会学術集会"
+  preprint: ""
+  year: 2021
+  month: "09"
+  doi: ""
+  link: ""
+  presentation: "Oral presentation"
+  citations: 0

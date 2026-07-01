@@ -1,0 +1,12 @@
+# News items for Japanese fiscal year 2014.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2014_07_01_01:
+  display: true
+  date: "2014-07-01"
+  student_year: ""
+  title: "Ningxia Medical University, School of Clinical Medicine Graduated"
+  person_name: "Rong Sun"
+  person_type: "Student"
+  position: "Medical Student"
+  text: "graduated from the **School of Clinical Medicine, Ningxia Medical University**."

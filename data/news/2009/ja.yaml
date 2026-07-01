@@ -1,0 +1,22 @@
+# News items for Japanese fiscal year 2009.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2009_09_01_01:
+  display: true
+  date: "2009-09-01"
+  student_year: ""
+  title: "寧夏医科大学臨床医学学部，入学"
+  person_name: "孫 栄"
+  person_type: "学生"
+  position: "医学部学生"
+  text: "**中国寧夏医科大学臨床医学学部**に入学しました．"
+
+news_2009_11_30_01:
+  display: true
+  date: "2009-11-30"
+  student_year: ""
+  title: "中国，医師免許"
+  person_name: "孫 栄"
+  person_type: "医学部学生"
+  position: "医学部学生"
+  text: "**中国の医師免許**を取得しました．"

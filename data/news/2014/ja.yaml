@@ -1,0 +1,12 @@
+# News items for Japanese fiscal year 2014.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2014_07_01_01:
+  display: true
+  date: "2014-07-01"
+  student_year: ""
+  title: "寧夏医科大学臨床医学学部，卒業"
+  person_name: "孫 栄"
+  person_type: "学生"
+  position: "医学部学生"
+  text: "**中国寧夏医科大学臨床医学学部**を卒業しました．"

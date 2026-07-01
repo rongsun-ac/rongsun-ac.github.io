@@ -1,0 +1,12 @@
+# News items for Japanese fiscal year 2014.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2014_07_01_01:
+  display: true
+  date: "2014-07-01"
+  student_year: ""
+  title: "宁夏医科大学临床医学学部，毕业"
+  person_name: "孙 荣"
+  person_type: "学生"
+  position: "医学生"
+  text: "毕业于 **中国宁夏医科大学临床医学学部**。"

@@ -1,0 +1,6 @@
+# Home-page latest-news summary for one language.
+
+display: false
+label: "LATEST NEWS"
+intro: "プロフィールに関する最新情報を掲載しています．"
+button: "すべてのニュースを見る"

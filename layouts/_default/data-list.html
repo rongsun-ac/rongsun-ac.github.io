@@ -8,17 +8,21 @@
     {{ $lang = "en" }}
   {{ end }}
   {{ $key := .Params.sectionKey }}
-  {{ $data := index .Site.Data $lang $key }}
+  {{ $sectionData := index .Site.Data $key | default dict }}
+  {{ $data := index $sectionData $lang | default dict }}
+  {{ if or (eq $key "access") (eq $key "links") }}
+    {{ $data = partial "merge-localized-data.html" (dict "base" (index $sectionData "en") "local" (index $sectionData $lang | default dict) "keys" (slice "homeSummary" "address" "access" "message" "contact" "map")) }}
+  {{ end }}
   {{ if eq $key "members" }}
     {{ $data = .Site.Data.members }}
   {{ else if eq $key "news" }}
-    {{ $data = .Site.Data.news }}
+    {{ $data = partial "collect-news.html" (dict "site" .Site "lang" $lang) }}
   {{ else if eq $key "research" }}
     {{ $data = .Site.Data.research }}
   {{ else if eq $key "supervision" }}
-    {{ $data = .Site.Data.supervision }}
+    {{ $data = .Site.Data.supervision.items }}
   {{ end }}
-  {{ $pageTitle := $data.title | default .Title }}
+  {{ $pageTitle := .Title }}
   {{ if eq $key "members" }}
     {{ $pageTitle = .Title }}
   {{ else if eq $key "news" }}
@@ -160,8 +164,7 @@
       {{ end }}
 
     {{ else if eq $key "research" }}
-      {{ $research := .Site.Data.research }}
-      {{ $publications := .Site.Data.publications }}
+      {{ $publications := partial "collect-publications.html" . }}
       {{ $topicLabel := "Research Topics" }}
       {{ $linkLabel := "Link" }}
       {{ if eq $lang "ja" }}
@@ -172,49 +175,64 @@
         {{ $linkLabel = "链接" }}
       {{ end }}
       {{ $directions := slice }}
-      {{ range $id, $direction := $research.directions }}
-        {{ if ne $direction.display false }}
+      {{ $researchConfigKeys := slice "display" "title" "description" "id" "paperCount" "directionSortKey" }}
+      {{ range $dataKey, $directionSet := .Site.Data.research }}
+        {{ $directionBase := index $directionSet "en" | default dict }}
+        {{ $directionLocal := index $directionSet $lang | default dict }}
+        {{ $directionDisplay := $directionLocal.display | default $directionBase.display }}
+        {{ if ne $directionDisplay false }}
           {{ $paperCount := 0 }}
-          {{ range $paperTitle, $paper := $research.papers }}
-            {{ if and (ne $paper.display false) (eq $paper.direction $id) }}
-              {{ $paperCount = add $paperCount 1 }}
+          {{ range $paperTitle, $paperBase := $directionBase }}
+            {{ if not (in $researchConfigKeys $paperTitle) }}
+              {{ $paperLocal := index $directionLocal $paperTitle | default dict }}
+              {{ $paperDisplay := $paperLocal.display | default $paperBase.display }}
+              {{ if ne $paperDisplay false }}
+                {{ $paperCount = add $paperCount 1 }}
+              {{ end }}
             {{ end }}
           {{ end }}
-          {{ $directionSortKey := add (mul (sub 0 $paperCount) 10000) (int ($direction.sort_weight | default 999)) }}
-          {{ $directions = $directions | append (merge $direction (dict "id" $id "paperCount" $paperCount "directionSortKey" $directionSortKey)) }}
+          {{ $directionSortKey := printf "%05d-%s" (sub 99999 $paperCount) $dataKey }}
+          {{ $id := $dataKey }}
+          {{ $directionTitle := $directionLocal.title | default $directionBase.title }}
+          {{ $directionDescription := $directionLocal.description | default $directionBase.description }}
+          {{ $directions = $directions | append (dict "id" $id "base" $directionBase "local" $directionLocal "title" $directionTitle "description" $directionDescription "paperCount" $paperCount "directionSortKey" $directionSortKey) }}
         {{ end }}
       {{ end }}
       <div class="research-directions">
         {{ range sort $directions "directionSortKey" "asc" }}
-          {{ $directionId := .id }}
-          {{ $directionTitle := index .title $lang | default (index .title "en") }}
-          {{ $directionDescription := index .description $lang | default (index .description "en") }}
+          {{ $directionTitle := .title }}
+          {{ $directionDescription := .description }}
           {{ $directionPapers := slice }}
-          {{ range $paperTitle, $paper := $research.papers }}
-            {{ if and (ne $paper.display false) (eq $paper.direction $directionId) }}
-              {{ $publicationTitle := $paper.publication_title | default $paperTitle }}
-              {{ $sortMatchedPaper := dict }}
-              {{ $hasSortMatchedPaper := false }}
-              {{ $normalizedSortQuery := lower (strings.TrimSpace $publicationTitle) }}
-              {{ range $publicationId, $publicationPaper := $publications }}
-                {{ if and (not $hasSortMatchedPaper) (ne $publicationPaper.display false) (eq (lower (strings.TrimSpace $publicationPaper.title)) $normalizedSortQuery) }}
-                  {{ $sortMatchedPaper = merge $publicationPaper (dict "id" $publicationId) }}
-                  {{ $hasSortMatchedPaper = true }}
+          {{ $directionLocal := .local }}
+          {{ range $paperTitle, $paperBase := .base }}
+            {{ if not (in $researchConfigKeys $paperTitle) }}
+              {{ $paperLocal := index $directionLocal $paperTitle | default dict }}
+              {{ $paper := merge $paperBase $paperLocal }}
+              {{ if ne $paper.display false }}
+                {{ $publicationTitle := $paper.publication_title | default $paperTitle }}
+                {{ $sortMatchedPaper := dict }}
+                {{ $hasSortMatchedPaper := false }}
+                {{ $normalizedSortQuery := lower (replaceRE "\\s+" " " (strings.TrimSpace $publicationTitle)) }}
+                {{ range $publicationPaper := $publications }}
+                  {{ $normalizedPublicationTitle := lower (replaceRE "\\s+" " " (strings.TrimSpace $publicationPaper.title)) }}
+                  {{ if and (not $hasSortMatchedPaper) (ne $publicationPaper.display false) (eq $normalizedPublicationTitle $normalizedSortQuery) }}
+                    {{ $sortMatchedPaper = $publicationPaper }}
+                    {{ $hasSortMatchedPaper = true }}
+                  {{ end }}
                 {{ end }}
-              {{ end }}
-              {{ $paperYear := 0 }}
-              {{ $paperMonth := 0 }}
-              {{ if $hasSortMatchedPaper }}
-                {{ with $sortMatchedPaper.year }}{{ $paperYear = int . }}{{ end }}
-                {{ with $sortMatchedPaper.month }}
-                  {{ $monthText := printf "%v" . }}
-                  {{ $monthText = replaceRE "^0+" "" $monthText }}
-                  {{ if $monthText }}{{ $paperMonth = int $monthText }}{{ end }}
+                {{ $paperYear := 0 }}
+                {{ $paperMonth := 0 }}
+                {{ if $hasSortMatchedPaper }}
+                  {{ with $sortMatchedPaper.year }}{{ $paperYear = int . }}{{ end }}
+                  {{ with $sortMatchedPaper.month }}
+                    {{ $monthText := printf "%v" . }}
+                    {{ $monthText = replaceRE "^0+" "" $monthText }}
+                    {{ if $monthText }}{{ $paperMonth = int $monthText }}{{ end }}
+                  {{ end }}
                 {{ end }}
+                {{ $paperSortKey := add (mul $paperYear 100) $paperMonth }}
+                {{ $directionPapers = $directionPapers | append (merge $paper (dict "id" $paperTitle "publication_title" $publicationTitle "researchSortKey" $paperSortKey)) }}
               {{ end }}
-              {{ $paperIndex := int ($paper.sort_weight | default 0) }}
-              {{ $paperSortKey := add (add (mul $paperYear 10000) (mul $paperMonth 100)) (sub 100 $paperIndex) }}
-              {{ $directionPapers = $directionPapers | append (merge $paper (dict "id" $paperTitle "publication_title" $publicationTitle "researchSortKey" $paperSortKey)) }}
             {{ end }}
           {{ end }}
           <section class="content-group research-direction">
@@ -225,34 +243,33 @@
                 {{ range sort $directionPapers "researchSortKey" "desc" }}
                   {{ $topicTitle := .id }}
                   {{ $topicDescription := "" }}
-                  {{ with .description }}
-                    {{ $topicDescription = index . $lang | default (index . "en") }}
-                  {{ end }}
+                  {{ with .description }}{{ $topicDescription = . }}{{ end }}
                   {{ $topicContributions := slice }}
-                  {{ with .contributions }}
-                    {{ $topicContributions = index . $lang | default (index . "en") }}
-                  {{ end }}
+                  {{ with .contributions }}{{ $topicContributions = . }}{{ end }}
                   {{ $topicImage := .image }}
                   {{ $topicImageAlt := "" }}
-                  {{ with .image_alt }}
-                    {{ $topicImageAlt = index . $lang | default (index . "en") }}
-                  {{ end }}
+                  {{ with .image_alt }}{{ $topicImageAlt = . }}{{ end }}
                   {{ $publicationQuery := .publication_title | default .id }}
                   {{ $matchedPaper := dict }}
                   {{ $hasMatchedPaper := false }}
                   {{ $topicLink := .link | default "" }}
                   {{ if $publicationQuery }}
-                    {{ $normalizedQuery := lower (strings.TrimSpace $publicationQuery) }}
-                    {{ range $paperId, $paper := $publications }}
-                      {{ if and (not $hasMatchedPaper) (ne $paper.display false) (eq (lower (strings.TrimSpace $paper.title)) $normalizedQuery) }}
-                        {{ $matchedPaper = merge $paper (dict "id" $paperId) }}
+                    {{ $normalizedQuery := lower (replaceRE "\\s+" " " (strings.TrimSpace $publicationQuery)) }}
+                    {{ range $paper := $publications }}
+                      {{ $normalizedPublicationTitle := lower (replaceRE "\\s+" " " (strings.TrimSpace $paper.title)) }}
+                      {{ if and (not $hasMatchedPaper) (ne $paper.display false) (eq $normalizedPublicationTitle $normalizedQuery) }}
+                        {{ $matchedPaper = $paper }}
                         {{ $hasMatchedPaper = true }}
                       {{ end }}
                     {{ end }}
                   {{ end }}
                   {{ if $hasMatchedPaper }}
-                    {{ $topicLink = $matchedPaper.doi | default $matchedPaper.url | default $matchedPaper.link | default $topicLink }}
-                    {{ if not $topicLink }}{{ $topicLink = printf "https://scholar.google.com/scholar?q=%s" ($matchedPaper.title | urlquery) }}{{ end }}
+                    {{ $topicLink = or $matchedPaper.doi $matchedPaper.url $matchedPaper.link $topicLink }}
+                  {{ end }}
+                  {{ if not $topicLink }}
+                    {{ $fallbackQuery := $publicationQuery }}
+                    {{ if and $hasMatchedPaper $matchedPaper.title }}{{ $fallbackQuery = $matchedPaper.title }}{{ end }}
+                    {{ $topicLink = printf "https://scholar.google.com/scholar?q=%s" ($fallbackQuery | urlquery) }}
                   {{ end }}
                   <details class="research-topic">
                     <summary>
@@ -279,7 +296,7 @@
                                 {{ $monthText = replaceRE "^0+" "" $monthText }}
                                 {{ if $monthText }}{{ $paperDate = printf "%v.%02d" $matchedPaper.year (int $monthText) }}{{ end }}
                               {{ end }}
-                              {{ $paperAuthors := $matchedPaper.authors | replaceRE "(Rong Sun|RONG SUN)" "<span class=\"publication-author-self\">$1</span>" }}
+                              {{ $paperAuthors := $matchedPaper.authors | replaceRE "(Cheng Tang|唐 成|唐成)" "<span class=\"publication-author-self\">$1</span>" }}
                               <div class="research-topic-publication">
                                 <p class="publication-authors">{{ $paperAuthors | safeHTML }}</p>
                                 <p class="meta">
@@ -319,7 +336,7 @@
         {{ end }}
       </div>
     {{ else if eq $key "publications" }}
-      {{ $publications := .Site.Data.publications }}
+      {{ $publications := partial "collect-publications.html" . }}
       {{ $papers := slice }}
       {{ range $id, $paper := $publications }}
         {{ if ne $paper.display false }}
@@ -416,7 +433,7 @@
       </div>
 
     {{ else if eq $key "projects" }}
-      {{ $projects := .Site.Data.projects }}
+      {{ $projects := .Site.Data.projects.items }}
       {{ $currentYear := now.Year }}
       {{ $ongoingLabel := "Ongoing Projects" }}
       {{ $completedLabel := "Completed Projects" }}
@@ -514,11 +531,11 @@
               <div class="stack">
                 {{ range sort $yearItems "date" "desc" }}
                   {{ $item := .item }}
-                  {{ $newsTitle := index $item.title $lang | default (index $item.title "en") }}
-                  {{ $newsText := index $item.text $lang | default (index $item.text "en") }}
-                  {{ $personName := index $item.person_name $lang | default (index $item.person_name "en") }}
-                  {{ $personType := index $item.person_type $lang | default (index $item.person_type "en") }}
-                  {{ $position := index $item.position $lang | default (index $item.position "en") }}
+                  {{ $newsTitle := $item.title }}
+                  {{ $newsText := $item.text }}
+                  {{ $personName := $item.person_name }}
+                  {{ $personType := $item.person_type }}
+                  {{ $position := $item.position }}
                   {{ $localizedItem := merge $item (dict "title" $newsTitle "text" $newsText "person_name" $personName "person_type" $personType "position" $position) }}
                   <article class="entry">
                     <p class="meta">{{ $item.date }}</p>

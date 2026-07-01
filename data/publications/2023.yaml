@@ -1,0 +1,41 @@
+# Publication entries for 2023.
+# Add one top-level entry per paper.
+# The site and citation updater read all YAML files in data/publications/ automatically.
+
+
+# AUTO-ADDED PUBLICATIONS FROM GOOGLE SCHOLAR
+# Please review these entries regularly, fill type/source/month/doi/link fields,
+# and rename IDs to journal_YYYY_NN, conference_YYYY_NN, or preprint_NN.
+
+journal_2023_02:
+  # TODO: Review this automatically added Google Scholar entry.
+  display: true
+  type: "conference"
+  title: "Supplementary Figures S1-S6 and Supplementary Table S1 from Anticancer Activity of ZnO Nanoparticles against Human Small-Cell Lung Cancer in an Orthotopic Mouse Model"
+  authors: "Takeshi Isobe, Yasuhisa Fujita, Mamoru Harada, Yukari Tsubata, Rong Sun, Xuexia Tong, Yoshihiro Amano, Ryosuke Tanino"
+  journal: "American Association for Cancer Research (AACR)"
+  conference: ""
+  preprint: ""
+  year: 2023
+  month: ""
+  doi: "https://doi.org/10.1158/1535-7163.22506324"
+  link: ""
+  citations: 0
+
+journal_2023_01:
+  display: true
+  type: "journal"
+  title: "Disclosing potential therapeutic targets associated with osimertinib resistance in the non-small cell lung cancer cell line H1975"
+  authors: "Tong X, Zhang R, Rong Sun, Yang W, Sun J, Chen J, Li F"
+  journal: "Anticancer Research"
+  conference: ""
+  preprint: ""
+  year: 2023
+  month: "12"
+  volume: "43"
+  number: "12"
+  pages: "5459-5474"
+  doi: "https://doi.org/10.21873/anticanres.16749"
+  link: ""
+  pmid: "38030186"
+  citations: 3

@@ -1,0 +1,22 @@
+# News items for Japanese fiscal year 2018.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2018_06_01_01:
+  display: true
+  date: "2018-06-01"
+  student_year: ""
+  title: "Ningxia Medical University, Master's Program Completed"
+  person_name: "Rong Sun"
+  person_type: "Student"
+  position: "Master's Student"
+  text: "completed the **master's program** in **Internal Medicine, Graduate School of Ningxia Medical University**."
+
+news_2018_06_01_02:
+  display: true
+  date: "2018-06-01"
+  student_year: ""
+  title: "Shimane University, Ph.D. Program Enrollment"
+  person_name: "Rong Sun"
+  person_type: "Student"
+  position: "Doctoral Student"
+  text: "entered the **Ph.D. program** in the **Faculty of Medicine, Graduate School of Shimane University**."

@@ -1,0 +1,22 @@
+# News items for Japanese fiscal year 2022.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2022_04_01_01:
+  display: true
+  date: "2022-04-01"
+  student_year: ""
+  title: "Shanghai Sixth People's Hospital, Physician"
+  person_name: "Rong Sun"
+  person_type: "Physician"
+  position: "Physician"
+  text: "began working as a physician at **Shanghai Sixth People's Hospital**, **Shanghai Jiao Tong University School of Medicine**."
+
+news_2022_06_01_01:
+  display: true
+  date: "2022-06-01"
+  student_year: ""
+  title: "Shimane University, Ph.D. Program Completed"
+  person_name: "Rong Sun"
+  person_type: "Student"
+  position: "Doctoral Student"
+  text: "completed the **Ph.D. program** in the **Faculty of Medicine, Graduate School of Shimane University**."

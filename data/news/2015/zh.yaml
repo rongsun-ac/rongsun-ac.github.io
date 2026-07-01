@@ -1,0 +1,12 @@
+# News items for Japanese fiscal year 2015.
+# Add one top-level entry per news item. The site reads all numeric year folders automatically.
+
+news_2015_09_01_01:
+  display: true
+  date: "2015-09-01"
+  student_year: ""
+  title: "宁夏医科大学大学院，硕士课程入学"
+  person_name: "孙 荣"
+  person_type: "学生"
+  position: "硕士生"
+  text: "进入 **中国宁夏医科大学大学院内科学科硕士课程**。"
